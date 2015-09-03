@@ -1,0 +1,16 @@
+<% @blog.reverse.each do |data| %>
+	<div class="blog">
+	<h1>Nom : <%= data.name %></h1>
+	<h3>Age : <%= data.age %></h3>
+	<h3>Titre : <%= data.title %></h3>
+	<h3>Article : <%= data.article %></h3>
+	</div>
+<% end %>
+
+<form action="/" method="post" accept-charset="utf-8">
+	<input type="text" name="tables[name]" placeholder="Nom">
+	<input type="text" name="tables[age]" placeholder="Age">
+	<input type="text" name="tables[title]" placeholder="Titre">
+	<textarea name="tables[article]" placeholder="Article"></textarea>
+	<input type="submit" value="Envoyer">
+</form>
