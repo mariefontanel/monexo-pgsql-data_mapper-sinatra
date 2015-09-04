@@ -2,8 +2,10 @@ require 'sinatra'
 require 'shotgun'
 require 'data_mapper'
 
-require './models/table.rb'
+require 'erb'
 
+require './models/table.rb'
+require 'pry'
 
 
 DataMapper.setup(:default, 'postgres://postgres:simplon07@127.0.0.1:5432/blog')
@@ -14,7 +16,6 @@ DataMapper.auto_upgrade!
 
 get '/' do 
 	@blog = Table.all()
-	# puts Table.last.name
 	erb :index
 end
 
